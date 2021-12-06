@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="estilos.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <!-- <img src="img/tragaperras.png" alt=""> -->
+            <p>TRAGA<span>-</span><br>PERRAS</p>
+        </div>
+
+        <div class="introduce-monedas">
+            <p><label for="entradaMonedas"></label>Introduce mondedas:</label></p> 
+            <input type="number" id="entradaMonedas" min="1" value="0">
+            <button id="introducirMonedas">INTRODUCIR</button>
+        </div>
+
+        <div class="monedas">
+            <p >Número de <span class="line-break" >monedas:</span></p>
+            <span id="monedasActuales">0</span>
+
+        </div>
+
+
+
+
+    </header>
+    
+
+    
+    <br>
+    
+    
+    <div class="container-slot">
+    <div class="wrapper-slot">
+        <div class="wrapper-casillas">
+                <div class="frame1">
+                        <div class="frame2">
+                            <div class="casilla" >
+                                <img class="img-casilla" id="casilla1" src="img/pingu.png" alt="">
+                            </div>
+                            <div class="casilla"  >
+                                <img class="img-casilla" id="casilla2" src="img/pingu.png" alt="">
+                            </div>
+                            <div class="casilla" >
+                                <img class="img-casilla" id="casilla3" src="img/pingu.png" alt="">
+                            </div>
+                        </div>
+                </div>
+                <div class="pie-slot1"></div>
+                <div class="pie-slot2"></div>
+            </div>
+            <button class="casilla palanca" >
+                <img id="palanca" src="img/palancaUP.png" alt="">
+            </button>
+        </div>
+    </div>
+
+
+    <div class="footer">
+
+        <div class="historial-container">
+            <h4>Historial:</h3>
+            <div class="historial" id="historial"></div>
+        </div>
+        <div class="botones">
+            <button id="salir">SACAR MONEDAS</button>
+         </div>
+    
+
+
+
+    <script src="pac.js"></script>
+</body>
+</html>

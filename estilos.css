@@ -1,0 +1,280 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&display=swap');
+
+:root{
+    --naranja: #FF810D;
+    --amarillo: #FFB700;
+    --amarillo-num: #E79632;
+    --rojo: #F4543B;
+    --azul: #272559;
+    --bordes: #241F20;
+} 
+
+
+
+*{
+    margin: 0;
+    font-family: 'Montserrat';
+}
+body{
+    margin: 0;
+    padding: 0; 
+    font-size: 1.5rem;
+}
+
+button{
+    cursor:pointer;
+}
+ 
+ 
+.line-break{
+    display: block;
+}
+
+h4{
+    color: white;
+ 
+}
+
+ol{
+    padding: 2px;
+    font-size: 1rem;
+}
+
+
+
+/*Header*/
+header{
+    padding: 2% ;
+}
+
+.logo{
+    width: 33%;
+    float: left;
+    margin-top: 1rem;
+}
+.logo p{
+    color:rgb(235, 33, 11);
+    font-weight: 900;
+    font-style: italic;
+    font-size: 1.8rem;
+    line-height:1em;
+}
+
+ 
+
+.logo img{
+    width:150px;
+
+}
+.introduce-monedas{
+    width: 33%;
+    float: left;
+    text-align: center;
+}
+
+.monedas{
+    position: relative;
+    float: right;
+    width: 33%;
+    text-align: right;
+}
+.monedas p{
+    display: inline-block;
+    
+}
+
+.monedas #monedasActuales{
+    position: relative;
+    display: inline-block;
+    width: 5rem;
+    margin: 5px;
+    font-size: 4.5rem;
+    font-weight: 600;
+    color: var(--amarillo-num);
+    
+}
+
+#logo{
+    width: 200px;
+    height: 50px;
+    background-color: darkgoldenrod;
+}
+
+#entradaMonedas{ 
+    padding: 6px ;
+    width: 3rem;
+    border-radius: 15px;
+    border-color: var(--azul);
+    text-align: center;
+    
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+
+   opacity: 1;
+
+}
+
+#introducirMonedas{
+    padding: 8px 15px;
+    border-radius: 15px;
+    color: white;
+    background-color: var(--azul);
+    text-align: center;
+    border: none;
+}
+
+
+#introducirMonedas:disabled{
+    background-color: grey;
+    cursor:initial;
+}
+
+/* Máquina*/
+
+.container-slot{
+    position: absolute;
+    width: 100%;
+    bottom: 33vh;
+    margin-top: 50px; 
+    text-align: center; 
+}
+
+.wrapper-slot{
+    position: relative;
+    width: 65%;
+    margin: 0 auto;
+}
+.wrapper-casillas{
+    display: inline-block;
+    width: 78%;
+}
+
+.frame1{
+    position: relative;
+    display: inline-block;
+    background-color: var(--naranja);
+    padding: 3% 3% 3% 3%;
+    border-radius: 20px;
+    border: 5px solid var(--bordes);
+}
+.frame2{
+    position: relative;
+    display: inline-block;
+    background-color: var(--amarillo);
+    padding: 3% 3% 3% 3%;
+    border-radius: 20px;
+}
+
+.casilla{
+    position: relative;
+    width: 25%;
+    display: inline-block;
+    padding: 2%;
+    border: 3px solid var(--bordes);
+    border-radius: 20%;
+    background-color: white;
+}
+
+.img-casilla{
+    width: 100%;
+}
+
+.casilla.palanca{
+    position: relative;
+    display: inline-block;
+    width: 20%;
+    margin: 0;
+    padding: 0;
+    top: 1em;
+    left: -7px;
+    border: none;
+}
+#palanca  {
+    width: 100%;
+}
+
+.pie-slot1{
+    position: relative;
+    width: 50%;
+    height: 11px;
+    margin: 0 auto;
+    background-color: rgb(69, 69, 69);
+}
+
+.pie-slot2{
+    position: relative;
+    width: 76%;
+    height: 40px;
+    margin: 0 auto;
+    border-radius: 15px 15px 0 0;
+    background-color: var(--bordes);
+}
+
+
+
+/*///////FOOTER*/
+
+.footer{
+    position: absolute;
+    width: 100%;
+    height: 32vh;
+    bottom: 0;
+    background-color: var(--rojo);
+    border-top: 18px solid var(--azul);
+
+}
+
+
+.historial-container{
+    position: relative;
+    width: 60%;
+    height:70%;
+    float: left;
+    margin: 1rem;
+}
+
+
+.historial{
+    padding: 6px;
+    height: 90%;
+    overflow-y: scroll;
+    background-color: white;
+    border: 3px solid var(--amarillo);
+    border-radius: 15px;
+}
+
+.linea-ganar{
+    color: red;
+}
+
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: var(--azul) ;
+    --webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+  }
+
+.botones{
+    width: 30%;
+    float: left;
+    margin: 2%;
+}
+
+#salir{ 
+    margin-top: 1rem;
+    padding: 8px 20px;
+    border: 2px solid white;
+    border-radius: 15px;
+    color: white;
+    background-color: var(--azul);
+    text-align: center;
+}
