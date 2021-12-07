@@ -135,7 +135,7 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0 auto;
 }
 
-.wrapper-casillas{
+.body-slot{
     display: inline-block;
     width: 78%;
 }
@@ -157,7 +157,7 @@ input[type=number]::-webkit-outer-spin-button {
     border-radius: 20px;
 }
 
-.casilla{
+.imagenes{
     position: relative;
     width: 25%;
     display: inline-block;
@@ -167,11 +167,11 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: white;
 }
 
-.img-casilla{
+.img-imagenes{
     width: 100%;
 }
 
-.casilla.palanca{
+.imagenes.palanca{
     position: relative;
     display: inline-block;
     width: 20%;

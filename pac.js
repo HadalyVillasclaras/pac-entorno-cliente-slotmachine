@@ -1,9 +1,9 @@
 
 // Imágenes 
 var listaImagenes = ["aubergine", "banana", "carrots", "cherries", "dollar", "lemon", "orange", "peach", "potato", "tomato"];
-var cas1 = document.getElementById("casilla1");
-var cas2 = document.getElementById("casilla2");
-var cas3 = document.getElementById("casilla3");
+var img1 = document.getElementById("imagen1");
+var img2 = document.getElementById("imagen2");
+var img3 = document.getElementById("imagen3");
 
 
 //Gestión monedas
@@ -20,14 +20,12 @@ function nuevaTirada () {
     var random3 = Math.round(Math.random()*9); 
 
     //Construir src de la img
-    cas1.src = "img/" + listaImagenes[random1] + ".png";
-    cas2.src = "img/" + listaImagenes[random2] + ".png";
-    cas3.src = "img/" + listaImagenes[random3] + ".png";
+    img1.src = "img/" + listaImagenes[random1] + ".png";
+    img2.src = "img/" + listaImagenes[random2] + ".png";
+    img3.src = "img/" + listaImagenes[random3] + ".png";
    
-    //Crear un aray con los valores generados por random
+    //Crear un array con los valores generados por random como posición del array listaImágenes
     var tirada = [listaImagenes[random1], listaImagenes[random2], listaImagenes[random3]];
- 
-    console.log("PRUEBA" + tirada[0]);
     
     //Funcion restar moneda por tirada
     gastaUnaMoneda();
@@ -38,24 +36,23 @@ function nuevaTirada () {
 
 // PREMIOS
 function premios(tiradax){
-    console.log(tiradax[1]);
+    console.log(tiradax);
 
-    var cas1 = tiradax[0];
-    var cas2 = tiradax[1];
-    var cas3 = tiradax[2];
+    var img1 = tiradax[0];
+    var img2 = tiradax[1];
+    var img3 = tiradax[2];
 
 
     //Combinaciones que incluyen "dollar"
-    if(cas1 == "dollar" && cas2 == "dollar" && cas3 == "dollar" ) {
+    if(img1 == "dollar" && img2 == "dollar" && img3 == "dollar" ) {
          historial("¡Has ganado 10 monedas!");
-         sumaMonedas(10); 
-        
-        }else if ((cas1 == "dollar" && cas2 == "dollar") || 
-                (cas1 == "dollar" && cas3 == "dollar") || 
-                (cas2 == "dollar" && cas3 == "dollar")){
+         sumaMonedas(10);
+        }else if ((img1 == "dollar" && img2 == "dollar") || 
+                (img1 == "dollar" && img3 == "dollar") || 
+                (img2 == "dollar" && img3 == "dollar")){
                 historial("¡Has ganado 4 monedas!");
                 sumaMonedas(4); 
-        }else if (tiradax.includes("dollar") && (cas1 == cas2 || cas1 == cas3 || cas3 == cas2)){
+        }else if (tiradax.includes("dollar") && (img1 == img2 || img1 == img3 || img3 == img2)){
             historial("¡Has ganado 3 monedas!"); 
             sumaMonedas(3);
         }else if (tiradax.includes("dollar")){
@@ -66,13 +63,10 @@ function premios(tiradax){
 
     //Combinaciones que no incluyen "dollar"
     if(tiradax.indexOf("dollar")==-1){
-        console.log(tiradax);
-        if(cas1 == cas2 && cas1 == cas3 && cas2 == cas3){
-            console.log("Ganas 5 monedas de hortalzas");
+        if(img1 == img2 && img1 == img3 && img2 == img3){
             historial("¡Has ganado 5 monedas!"); 
             sumaMonedas(5);
-        }else if (cas1 == cas2 || cas1 == cas3 || cas2 == cas3){
-            console.log("Ganas 2 monedas");
+        }else if (img1 == img2 || img1 == img3 || img2 == img3){
             historial("¡Has ganado 2 monedas!"); 
             sumaMonedas(2);
         }
@@ -123,6 +117,7 @@ function gastaUnaMoneda(){
 //SUMA MONEDAS
 function sumaMonedas(valor){
     monedasActuales.innerHTML = Number(monedasActuales.innerHTML) + valor;
+    //Función para cambiar el color de las líneas de premios
     cambiaColor();
 }
  
