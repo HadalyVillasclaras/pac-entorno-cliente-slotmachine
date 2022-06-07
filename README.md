@@ -3,5 +3,4 @@
 <p>Grado Superior Desarrollo de Aplicaciones Web</p>
 
 El trabajo consistía en implementar un simulador tipo juego "tragaperras" utilizando JavaScript puro (sin frameworks).
-
-<img src="img/thumb.png" width="800">
+ 
