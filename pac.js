@@ -6,30 +6,26 @@ var img2 = document.getElementById("imagen2");
 var img3 = document.getElementById("imagen3");
 
 
-//Gestión monedas
+//Monedas
 var entradaMonedas = document.getElementById("entradaMonedas"); //input
 var introducirMonedas = document.getElementById("introducirMonedas"); //button
 var monedasActuales = document.getElementById("monedasActuales"); 
 
 
-//NUEVA TIRADA 
+
 function nuevaTirada () {
     //Generar 3 números aleatorios
     var random1 = Math.round(Math.random()*9);
     var random2 = Math.round(Math.random()*9);
     var random3 = Math.round(Math.random()*9); 
 
-    //Construir src de la img
     img1.src = "img/" + listaImagenes[random1] + ".png";
     img2.src = "img/" + listaImagenes[random2] + ".png";
     img3.src = "img/" + listaImagenes[random3] + ".png";
    
-    //Crear un array con los valores generados por random como posición del array listaImágenes
     var tirada = [listaImagenes[random1], listaImagenes[random2], listaImagenes[random3]];
     
-    //Funcion restar moneda por tirada
     gastaUnaMoneda();
-    //Pasar a la funcion "premios" el valor del array 
     premios(tirada);
 }
 
@@ -43,7 +39,6 @@ function premios(tiradax){
     var img3 = tiradax[2];
 
 
-    //Combinaciones que incluyen "dollar"
     if(img1 == "dollar" && img2 == "dollar" && img3 == "dollar" ) {
          historial("¡Has ganado 10 monedas!");
          sumaMonedas(10);
@@ -61,7 +56,6 @@ function premios(tiradax){
         }
 
 
-    //Combinaciones que no incluyen "dollar"
     if(tiradax.indexOf("dollar")==-1){
         if(img1 == img2 && img1 == img3 && img2 == img3){
             historial("¡Has ganado 5 monedas!"); 
@@ -73,7 +67,7 @@ function premios(tiradax){
     }   
 }
 
-//INTRODUCIR MONEDAS
+
 function introduceMonedas(){
     var cantidadMonedas = entradaMonedas.value;
     monedasActuales.innerHTML = cantidadMonedas;
@@ -87,7 +81,7 @@ function introduceMonedas(){
     introducirMonedas.disabled = true;
 };
 
-// PULSAR PALANCA
+
 function pulsarPalanca(){
     if (monedasActuales.innerHTML < 1)
     {
@@ -100,13 +94,14 @@ function pulsarPalanca(){
     }
 }
 
-//SOLTAR PALANCA
+
+
 function soltarPalanca(){
     document.getElementById("palanca").src = "img/palancaUP.png";
 }
 
 
-// RESTA 1 MONEDA 
+
 function gastaUnaMoneda(){
     //Restar 1 moneda a monedasActuales
     --monedasActuales.innerHTML 
@@ -114,7 +109,8 @@ function gastaUnaMoneda(){
     historial("Gastas 1 moneda");
 }
 
-//SUMA MONEDAS
+
+
 function sumaMonedas(valor){
     monedasActuales.innerHTML = Number(monedasActuales.innerHTML) + valor;
     //Función para cambiar el color de las líneas de premios
@@ -122,7 +118,8 @@ function sumaMonedas(valor){
 }
  
 
-// HISTORIAL
+
+
 function historial(texto){
     var newOl = document.createElement("OL");
     var textNode = document.createTextNode(texto);
@@ -131,7 +128,8 @@ function historial(texto){
     list.insertBefore(newOl, list.childNodes[0]);
 }
 
-// CAMBIA COLOR LINEA HISTORIAL
+
+
 function cambiaColor(){
     var lineaGanar = document.getElementsByTagName("ol")[0];
     lineaGanar.classList.add("linea-ganar");
@@ -139,7 +137,6 @@ function cambiaColor(){
 
  
 
-//SACAR MONEDAS
 function salir(){
     //Pasar monedas actuales a entrada de monedas
     entradaMonedas.value = monedasActuales.innerHTML;
